@@ -1,0 +1,134 @@
+﻿extends ../shared/template
+
+block content
+  h1= title
+  //- #centerme
+    a#btn-register(href='#') Register
+    a#btn-login(href='#') Login
+
+    .clear
+
+    form#form-register(action='/register', method='post')
+      input#register-input-email(type='email', name='email', placeholder='Email Address')
+      .clear
+      input#register-input-password(type='password', name='password', placeholder='Password')
+      .clear
+      button#submit-register Create Account
+
+    form#form-login(method='post', action='/login')
+      input#login-input-email(type='email', name='email', placeholder='Email Address')
+      .clear
+      input#login-input-password(type='password', name='password', placeholder='Password')
+      .clear
+      button#submit-login Login
+
+  .bs-example
+    #accordion.panel-group
+      .panel.panel-default
+        .panel-heading
+          h4.panel-title
+            a(data-toggle='collapse', data-parent='#accordion', href='#collapseZero') Register/Login
+        #collapseZero.panel-collapse.collapse
+          .panel-body
+            #centerme
+              //- a#btn-register(href='#') Register
+              //- a#btn-login(href='#') Login
+
+              .clear
+
+              form#form-register(action='/register', method='post')
+                input#register-input-email(type='email', name='email', placeholder='Email Address')
+                .clear
+                input#register-input-password(type='password', name='password', placeholder='Password')
+                .clear
+                button#submit-register Create Account
+
+              form#form-login(method='post', action='/login')
+                input#login-input-email(type='email', name='email', placeholder='Email Address')
+                .clear
+                input#login-input-password(type='password', name='password', placeholder='Password')
+                .clear
+                button#submit-login Login
+              <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+              </fb:login-button>
+
+      .panel.panel-default
+        .panel-heading
+          h4.panel-title
+            a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne') Buildings
+        #collapseOne.panel-collapse.collapse
+          .panel-body
+            p Sample Builindg Gallery
+            table
+              tbody
+                tr
+                  td
+                    | 80x125x18 w LT
+                    br
+                    img(src='img/BlueRidgeGlass.jpg', alt='Blue Ridge Glass', width='250', height='175')
+                tr
+                  td
+                    | Car Dealership
+                    br
+                    img(src='img/HardyFamilyFord.jpg', alt='Hardy Family Ford', width='250', height='100')
+                tr
+                  td
+                    | Golf Storage - 45x190x12
+                    br
+                    img(src='img/SapphireValley.jpg', alt='Sapphire Valley', width='250', height='175')
+                tr
+                  td
+                    | Retail
+                    br
+                    img(src='img/Stoney.jpg', alt='Car Dealership', width='250', height='175')
+                tr
+                  td
+                    | 100x125x18 w LT
+                    br
+                    img(src='img/ValleyIrrigation.jpg', alt='Valley Irrigation', width='250', height='175')
+      .panel.panel-default
+        .panel-heading
+          h4.panel-title
+            a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo') Basic Input
+        #collapseTwo.panel-collapse.collapse
+          .panel-body
+      .panel.panel-default
+        .panel-heading
+          h4.panel-title
+            a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree') Quote
+        #collapseThree.panel-collapse.collapse
+          .panel-body
+            table
+              tbody
+                tr
+                  th Width
+                  td
+                    input#width(type='text', name='Width', size='4', value='60')
+                tr
+                  th Length
+                  td
+                    input#length(type='text', name='Length', size='4', value='100')
+                tr
+                  th Eave
+                  td
+                    input#eave(type='text', name='Eave', size='4', value='20')
+                tr
+                  th Bays
+                  td
+                    input#bays(type='text', name='Bays', size='2', value='4')
+                tr
+                  th Standing Seam Roof?
+                  td
+                    input#standingSeam(type='text', name='StandingSeam', size='1', value='1')
+                tr
+                  th Color
+                  td
+                    input#color(type='text', name='Color', size='2', value='ZA')
+                tr
+                  th Zip
+                  td
+                    input#zip(type='text', name='Zip', size='5', value='42103')
+            button#btnSubmitModel(type='button') Submit
+            br
+            br
+            | Existing Quote
